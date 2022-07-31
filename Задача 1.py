@@ -39,6 +39,16 @@ def player(pole):
     pole[x][y] = 'X'
     print('Ход игрока принят')
 
+def draw_check(pole):
+    empty=0
+    for i in range(0,3):
+        for j in range(0,3):
+            if pole[i][j]=='_':
+                empty=+1
+    if empty == 0:
+        return True
+    else: return False
+
 print(f'count={count}')
 print('Игра начинается')
 if count%2==0:
@@ -61,3 +71,6 @@ while WinCheck(pole)!=True:
         count+=1
         if WinCheck(pole)==True:
             print('Игра окончена! Победил бот')
+    if draw_check(pole) ==True:
+        print('Игра окончена, ничья')
+        break
