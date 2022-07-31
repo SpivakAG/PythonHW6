@@ -11,7 +11,7 @@ def polePrint(pole):
         print()
 
 def WinCheck(pole):
-    if pole[0][0] == pole[0][1] == pole[0][2] != '_' or pole[0][0] == pole[1][1] == pole[2][2] != '_' or pole[0][0] == pole[1][0] == pole[2][0] != '_' or pole[0][0] == pole[1][0] == pole[2][0] != '_' or pole[0][2] == pole[1][2] == pole[2][2] != '_' or pole[0][0] == pole[1][1] == pole[2][2] != '_' or pole[0][2] == pole[1][1] == pole[2][0] != '_' or pole[2][0] == pole[2][1] == pole[2][2] != '_':
+    if pole[0][0] == pole[0][1] == pole[0][2] != '_' or pole[0][0] == pole[1][1] == pole[2][2] != '_' or pole[0][0] == pole[1][0] == pole[2][0] != '_' or pole[0][0] == pole[1][0] == pole[2][0] != '_' or pole[0][2] == pole[1][2] == pole[2][2] != '_' or pole[0][0] == pole[1][1] == pole[2][2] != '_' or pole[0][2] == pole[1][1] == pole[2][0] != '_' or pole[2][0] == pole[2][1] == pole[2][2] != '_'or pole[0][0] == pole[1][0] == pole[2][0] != '_' or pole[0][2] == pole[1][2] == pole[2][2] != '_' or pole[0][0] == pole[1][1] == pole[2][2] != '_' or pole[0][2] == pole[1][1] == pole[2][0] != '_' or pole[0][1] == pole[1][1] == pole[2][1] != '_':
         return True
     else:
         return False
@@ -19,10 +19,10 @@ def WinCheck(pole):
 def opponent(pole):
     x = randint(0, 2)
     y = randint(0, 2)
-    print(f'Противник ходит на {x}, {y}')
     while pole[x][y] != '_':
         x = randint(0, 2)
         y = randint(0, 2)
+    print(f'Противник ходит на {x+1}, {y+1}')
     pole[x][y] = 'O'
     print('Ход противника принят')
 
